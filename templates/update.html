@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content  %}
+
+<form action="/update/{{recipe.id}}" method="POST">
+    <div class="form-Row">
+        <div class="col-sm-10 my-1">
+            <label for="name">Mise à jour recette</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Ajoutez une recette" value="{{ recipe.name }}"/>         
+        </div>
+        <div class="col-sm-2 my-1">
+            <button type="submit" class="btn btn-primary">>Modiier </button>
+        </div>
+    </div>
+</form>
+{% endblock content %}
