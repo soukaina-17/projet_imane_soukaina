@@ -1,0 +1,105 @@
+<<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recettes de Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            display: inline-block;
+        }
+        .social-icons img {
+            width: 40px; /* Ajuste la taille des icônes */
+            height: 40px;
+        }
+
+        /* Style pour les formulaires de connexion/inscription */
+        .auth-container {
+            position: absolute;
+            top: 20px;  /* Positionner en haut */
+            right: 20px; /* Positionner à droite */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: auto;
+            z-index: 1000; /* S'assurer que le formulaire reste au-dessus du contenu */
+        }
+
+        .auth-form {
+            width: 250px; /* Largeur plus petite */
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .auth-form h2 {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .auth-form button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .auth-form button:hover {
+            background-color: #45a049;
+        }
+
+        .toggle-btn {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #4CAF50;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>so yummy</h1>
+        <input type="text" id="search" placeholder="Rechercher une recette..." onkeyup="searchRecipe()">
+    </header>
+
+    <main>
+        <section id="recipe-list">
+            <div class="recipe-card">
+                <img src="https://via.placeholder.com/200" alt="Recette 1">
+                <h2>Salade César</h2>
+                <p>Un classique de la cuisine italienne...</p>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://via.placeholder.com/200" alt="Recette 2">
+                <h2>Spaghetti Bolognaise</h2>
+                <p>La recette parfaite pour les amateurs de pâtes...</p>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://via.placeholder.com/200" alt="Recette 3">
