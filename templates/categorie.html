@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes de Cuisine</title>
+
+</head>
+<body>
+
+<header>
+    <h1>Bienvenue sur notre site de recettes</h1>
+</header>
+
+<nav>
+    <a href="javascript:void(0);" onclick="filterCategory('petit-dejeuner')">Petit Déjeuner</a>
+    <a href="javascript:void(0);" onclick="filterCategory('dejeuner')">Déjeuner</a>
+    <a href="javascript:void(0);" onclick="filterCategory('gouter')">Goûter</a>
+    <a href="javascript:void(0);" onclick="filterCategory('diner')">Dîner</a>
+</nav>
+
+<div class="container">
+    <div class="category" id="petit-dejeuner">
+        <h2>Petit Déjeuner</h2>
+        <a href="petit-dejeuner.html">Voir les recettes</a>
+    </div>
+
+    <div class="category" id="dejeuner">
+        <h2>Déjeuner</h2>
+        <a href="dejeuner.html">Voir les recettes</a>
+    </div>
+
+    <div class="category" id="gouter">
+        <h2>Goûter</h2>
+        <a href="gouter.html">Voir les recettes</a>
+    </div>
+
+    <div class="category" id="diner">
+        <h2>Dîner</h2>
+        <a href="diner.html">Voir les recettes</a>
+    </div>
+</div>
+
+<script>
+    function filterCategory(category) {
+        // Masquer toutes les catégories
+        var categories = document.querySelectorAll('.category');
+        categories.forEach(function(cat) {
+            cat.style.display = "none";
+        });
+
+        // Afficher uniquement la catégorie sélectionnée
+        var selectedCategory = document.getElementById(category);
+        if (selectedCategory) {
+            selectedCategory.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
+
