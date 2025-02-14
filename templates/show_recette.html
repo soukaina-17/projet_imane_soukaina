@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recette bg-dark">
+    <div class="back">
+        <a href="{{ url_for('home') }}"><i class="bi bi-arrow-left-circle-fill"></i></a>
+    </div>
+
+    <div class="cardDetails row mt-5">
+        <h2 class="text-center mb-5">{{ ['title'] }}</h2>
+        <div class="col-12 col-xl-5 row p-5">
+            <img src="{{ url_for('static', filename='assets/img/' + recette['image']) }}" alt="Affiche de la recette">
+            <div class="col-12 mt-5">
+                <form action="{{ url_for('panier') }}" method="post" class="w-50 m-auto row justify-content-center p-5">
+                    <input type="hidden" name="id_recette" value="{{ recette['id_recette'] }}">
+                    <select name="quantity" class="form-select form-select-lg mb-3">
+                        {% for i in range(1, recette['stock'] + 1) %}
+                            <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="m-auto btn btn-danger btn-lg fs-5" type="submit">Ajouter au favoris</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="detailsContent col-md-7 p-5">
+            <div class="container mt-5">
+                <div class="row">
+                    <h3 class="col-4"><span> createur :</span></h3>
+                    <ul class="col-8">
+                        <li>{{ recette['creator'] }}</li>
+                    </ul>
+                    <hr>
+                </div>
+                
+                <div class="row">
+                    <h3 class="col-4"><span> Temps de préparation :</span></h3>
+                    <ul class="col-8">
+                        <li>{{ recette['time'] }}</li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <h3 class="col-4"><span> Type de recette:</span></h3>
+                    <ul class="col-8">
+                        <li>{{ recette['category_id'] }}</li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <h3 class="col-4"><span>Durée :</span></h3>
+                    <ul class="col-8">
+                        <li>{{ duration }}</li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <h3 class="col-4"><span>Date de sortie :</span></h3>
+                    <ul class="col-8">
+                        <li>{{ recette['date'] }}</li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <h5 class="col-4"><span>Synopsis :</span></h5>
+                    <ul class="col-8">
+                        <li>{{ recette['synopsis'] }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
